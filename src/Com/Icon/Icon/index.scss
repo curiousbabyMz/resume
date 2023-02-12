@@ -1,0 +1,9 @@
+@import '../../routes/index.scss';
+
+.icon {
+  @include flex(flex-start);
+
+  .font {
+    margin-left: 5px;
+  }
+}

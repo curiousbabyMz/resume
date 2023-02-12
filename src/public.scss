@@ -1,0 +1,9 @@
+$scale: 3;
+$A4width: 210px * $scale;
+$A4Height: 297px * $scale;
+
+@mixin flex($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

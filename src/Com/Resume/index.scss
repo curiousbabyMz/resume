@@ -1,0 +1,144 @@
+@import "../../public.scss";
+.resume {
+  padding: 0 0 20px;
+  font-size: 16px;
+}
+.header {
+  .title {
+    padding: 50px 40px 60px;
+    background: #63a4d3;
+    font-size: 25px;
+    color: #fff;
+    text-align: right;
+    .cn {
+      font-family: Microsoft YaHei;
+      @include flex(flex-end);
+      line-height: 40px;
+      .split {
+        width: 1px;
+        content: "";
+        height: 20px;
+        background: rgba(255, 255, 255, 0.274);
+        margin: 5px 12px;
+      }
+    }
+    .en {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.575);
+      letter-spacing: 10px;
+      margin: 8px -10px 0 0;
+    }
+  }
+}
+.info {
+  @include flex(flex-start, flex-start);
+  margin-top: -60px;
+  padding: 0 40px 20px;
+  .avatar {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 5px;
+  }
+
+  .base_info {
+    margin: 0 0 0 30px;
+    .name {
+      color: #fff;
+      font-size: 28px;
+      margin: 10px 0 30px;
+    }
+    .base_info_items {
+      @include flex(flex-start);
+      flex-wrap: wrap;
+      font-size: 12px;
+      margin: 0 -10px;
+      .base_info_item {
+        @include flex();
+        margin: 0 10px;
+        .content {
+          text-indent: 10px;
+        }
+      }
+    }
+  }
+}
+.detail {
+  padding: 20px 20px 0;
+}
+.edu {
+  padding: 0 20px 20px;
+  .item {
+    @include flex(flex-start);
+    padding: 10px 0;
+
+    font-size: 16px;
+    .school {
+      margin: 0 30px 0 0;
+    }
+    .qualification {
+      flex: 1;
+      font-size: 16px;
+      color: #424242;
+    }
+  }
+}
+.companys {
+  padding: 0 20px 30px;
+  .item {
+    padding: 10px 0;
+    .top {
+      @include flex(space-between);
+      line-height: 30px;
+    }
+    .position {
+      font-size: 15px;
+      padding: 5px 0;
+    }
+    .job {
+      font-size: 14px;
+      color: #747474;
+    }
+  }
+}
+.projects {
+  padding: 0 20px 70px;
+  .item {
+    padding: 10px 0;
+    .name {
+      padding: 0 0 5px;
+    }
+    .technology,
+    .job {
+      font-size: 15px;
+      color: #444444;
+      padding: 5px 0;
+    }
+    .technology {
+      @include flex(flex-start);
+      flex-wrap: wrap;
+      margin: 0 -5px;
+      .item {
+        font-size: 12px;
+        margin: 2px 5px;
+        padding: 2px 10px;
+        border-radius: 20px;
+        background: rgb(84, 158, 255);
+        color: #fff;
+      }
+    }
+
+    .description {
+      font-size: 14px;
+      color: #747474;
+    }
+  }
+}
+.self_appraisal {
+  padding: 10px 20px 20px;
+  color: #5a5a5a;
+  .item {
+    padding: 3px 0;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../public.scss";
+
+.detail_title {
+  @include flex(flex-start);
+  display: inline-flex;
+  // padding: 20px 0 0;
+}
+.icon {
+  position: relative;
+  margin: 5px;
+  &::after {
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    content: "";
+    background: rgb(84, 158, 255);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  img {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+  }
+}
+.title {
+  color: rgb(84, 158, 255);
+  font-weight: bold;
+  font-size: 18px;
+  background: rgb(230, 245, 255);
+  border-radius:0 50px 50px 0;
+  line-height: 40px;
+  padding: 0 50px 0 30px;
+  margin-left: -20px;
+}

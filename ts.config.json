@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "es7", "dom"],
+    "baseUrl": "src",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "compileOnSave": false,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "paths": {
+      "app/*": ["./app/*"]
+    }
+  },
+  "files": ["./src/global.d.ts"],
+  "include": ["./src/**/*"],
+  "exclude": ["dist", "node_modules"],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true
+  }
+}
