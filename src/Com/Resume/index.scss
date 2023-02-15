@@ -108,8 +108,8 @@
     padding: 10px 0;
     .name {
       padding: 0 0 5px;
+      font-size: 17px;
     }
-    .technology,
     .job {
       font-size: 15px;
       color: #444444;
@@ -118,6 +118,7 @@
     .technology {
       @include flex(flex-start);
       flex-wrap: wrap;
+      padding: 5px 0;
       margin: 0 -5px;
       .item {
         font-size: 12px;
@@ -132,6 +133,23 @@
     .description {
       font-size: 14px;
       color: #747474;
+      .content {
+        text-indent: 25px;
+      }
+    }
+    .contribution {
+      font-size: 15px;
+      color: #222;
+      .content {
+        padding: 0 0 0 25px;
+      }
+    }
+
+    .job {
+      .label,
+      .content {
+        display: inline;
+      }
     }
   }
 }

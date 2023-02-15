@@ -89,23 +89,39 @@ const Resume = () => {
       <div className={styles.detail}>
         <DetailTitle code="icon-xiangmujingyan" title="项目经历" />
         <div className={styles.projects}>
-          {projects.map(({ name, job, technology, description }) => (
-            <div className={styles.item} key={name}>
-              <div className={styles.top}>
-                <div className={styles.name}>{name}</div>
-                {/* <Time className={styles.time} time={time} /> */}
-              </div>
-              <div className={styles.technology}>
-                {technology.map((each) => (
-                  <div className={styles.item} key={each}>
-                    {each}
+          {projects.map(
+            ({ name, job, technology, description, contribution }) => (
+              <div className={styles.item} key={name}>
+                <div className={styles.top}>
+                  <div className={styles.name}>{name}</div>
+                  {/* <Time className={styles.time} time={time} /> */}
+                </div>
+                <div className={styles.technology}>
+                  {technology.map((each) => (
+                    <div className={styles.item} key={each}>
+                      {each}
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.description}>
+                  <div className={styles.label}>项目简介：</div>
+                  <div className={styles.content}> {description}</div>
+                </div>
+                <div className={styles.job}>
+                  <div className={styles.label}>个人职责：</div>
+                  <div className={styles.content}> {job}</div>
+                </div>
+                <div className={styles.contribution}>
+                  <div className={styles.label}>工作成果：</div>
+                  <div className={styles.content}>
+                    {contribution.map((each) => (
+                      <div>{each}</div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-              <div className={styles.job}>个人职责：{job}</div>
-              <div className={styles.description}>项目简介：{description}</div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
       <div className={styles.detail}>
