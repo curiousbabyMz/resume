@@ -7,12 +7,18 @@ import styles from "./index.scss";
 
 const Time = ({ time: { start, end }, className }) => (
   <div className={className}>
-    {moment(start).format("YYYY.MM")} - {moment(end).format("YYYY.MM")}
+    {moment(start).format("YYYY.MM")} -{" "}
+    {moment().format("YYYY.MM.DD HH:MM") ===
+    moment(end).format("YYYY.MM.DD HH:MM")
+      ? "至今"
+      : moment(end).format("YYYY.MM")}
   </div>
 );
+window.moment = moment;
 
 const Resume = () => {
-  const { photo, name, mobile, email, wechat, sex, selfAppraisal } = baseInfo;
+  const { photo, hobby, name, mobile, email, wechat, sex, selfAppraisal } =
+    baseInfo;
   const [isPrint, setIsPrint] = useState(true);
   useEffect(() => {
     // console.log("call \"isPrint(flag:Boolean)\" see more");
@@ -23,6 +29,7 @@ const Resume = () => {
   return (
     <div className={styles.resume}>
       <div className={styles.header}>
+        <img className={styles.banner} src={require("../../imgs/banner.png")} />
         <div className={styles.title}>
           <div className={styles.cn}>
             {"个人简历".split("").map((each, index) => (
@@ -56,6 +63,14 @@ const Resume = () => {
               <Icon code="icon-youxiang" color="#000000" size={24} />:
               <span className={styles.content}>{email}</span>
             </div>
+          </div>
+          <div className={`${styles.hobby} ${styles.base_info_items}`}>
+            <div className={styles.base_info_item}>
+              <Icon code="icon-aihao" color="#da5353" size={24} />：
+            </div>
+            {hobby.map((each) => (
+              <div className={styles.base_info_item}>{each}</div>
+            ))}
           </div>
         </div>
       </div>
@@ -115,7 +130,7 @@ const Resume = () => {
                   <div className={styles.label}>工作成果：</div>
                   <div className={styles.content}>
                     {contribution.map((each) => (
-                      <div>{each}</div>
+                      <div key={each}>{each}</div>
                     ))}
                   </div>
                 </div>

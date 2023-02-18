@@ -1,3 +1,7 @@
+import moment from "moment";
+import React from "react";
+import Icon from "./Com/Icon";
+
 interface TimeRange {
   start: number;
   end: number;
@@ -6,6 +10,7 @@ interface BaseInfo {
   name: string;
   photo: any;
   mobile: string;
+  hobby: JSX.Element[];
   sex: string;
   email: string;
   wechat: string;
@@ -38,6 +43,13 @@ export const baseInfo: BaseInfo = {
   photo: require("./imgs/avatar.jpg"),
   mobile,
   sex: "男",
+  hobby: [
+    <Icon code="icon-youxi" size={20} color="#515151" />,
+    <Icon code="icon-dianying" size={35} color="#515151" />,
+    <Icon code="icon-lanqiu1" size={30} color="#ea5555" />,
+    <Icon code="icon-zhuoqiu1" size={30} color="#515151" />,
+    <Icon code="icon-gangqinlaoshi-01" size={30} color="#fd6754" />,
+  ],
   email: "2047756046@qq.com",
   wechat: mobile,
   education: [
@@ -59,7 +71,7 @@ export const companys: Company[] = [
   {
     name: "安徽省刀锋网络科技有限公司",
     position: "前端开发工程师",
-    time: { start: 1648742400000, end: new Date().getTime() },
+    time: { start: 1648742400000, end: +moment() },
     job: "主要负责 Web 端、移动端 H5、后台管理系统相关项目开发； 负责新技术及框架的预研与探索应用；负责项目研发流程及代码管理规范的制定和优化；功能基建和公共模块的抽象维护；业务数据结构(多端)规范的讨论、协作完善交互逻辑与设计； 负责项目前端代码的优化维护和迭代升级工作；",
   },
   {
@@ -102,7 +114,7 @@ export const projects: Porject[] = [
       "对IM本地缓存的数据结构进行优化设计，并协助页面开发完成接入；提升加载速度，提升业务开发效率，减少迭代维护成本；",
       "封装公共函数对常用逻辑进行抽离，统一管理，减少维护成本；",
       "封装indexDB工具类；提升业务开发效率；",
-      "封装高阶组件（HOC），对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
+      "封装高阶组件(HOC)，对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
       "完成技术预研，接入Antv-x6，封装组件；实现同步赛程数据展示",
     ],
   },
@@ -124,7 +136,7 @@ export const projects: Porject[] = [
       "完成项目搭建和主要的功能开发；",
       "设计Js-Bridge的数据结构和方法暴露，并协助页面开发完成接入；提升业务开发效率，减少迭代维护成本；",
       "封装公共函数对常用逻辑进行抽离，统一管理，减少维护成本；",
-      "封装高阶组件（HOC），对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
+      "封装高阶组件(HOC)，对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
       "接入微信公众平台SDK，封装组件；实现微信唤起客户端及微信分享功能；",
       "完成技术预研，接入Antv-x6，封装组件；实现同步赛程数据展示",
       "完成技术预研，接入友盟U-Link SDK，封装组件；打通整个裂变分享链路；",
@@ -148,7 +160,7 @@ export const projects: Porject[] = [
     contribution: [
       "完成主要的功能开发；",
       "封装公共函数对常用逻辑进行抽离，统一管理，减少维护成本；",
-      "封装高阶组件（HOC），对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
+      "封装高阶组件(HOC)，对常用形态的容器组件、UI组件业务逻辑做分层处理；提升业务开发效率；",
       "完成技术预研，接入Antv-x6，研究攻克可视化编辑功能、数据转换清洗及同步问题，对编辑和可视化进行分层封装；实现同步赛程数据的编辑和展示",
     ],
   },
@@ -166,7 +178,14 @@ export const projects: Porject[] = [
       "git",
     ],
     job: "参与项目前端开发、模块组件封装、对接后端接口，参与讨论整个项目的设计与交互，并负责相关模块的后期维护，迭代升级工作。",
-    contribution: [""],
+    contribution: [
+      "完成主要功能开发",
+      "封装工具，提高开发效率",
+      "Echart复杂图表实现",
+      "ThreeJS 3D模型实现",
+      "高德SDK接入",
+      "微信登录SDK接入",
+    ],
   },
   {
     name: "智电U-微信小程序",
@@ -182,7 +201,13 @@ export const projects: Porject[] = [
       "git",
     ],
     job: "独立负责项目搭建、前端开发、工具封装、对接后端接口，参与讨论整个项目的设计与交互，并负责项目的后期维护，迭代升级工作。",
-    contribution: [""],
+    contribution: [
+      "独立完成功能开发",
+      "Uni-app框架预研",
+      "原生库迁移并丰富组件库，提高开发效率",
+      "微信无感登录",
+      "Echart复杂图表实现",
+    ],
   },
   {
     name: "ulock-AndroidApp",
@@ -190,7 +215,12 @@ export const projects: Porject[] = [
       "该项目为微信小程序项目，是一款工程现场辅助类工具，主要公司代理及内部工程部门使用，方便工程项目中智能锁的管理，由后台统一管理用户权限，通过手机 APP  进行鉴权和开锁操作，方便应对工程部门一对多的项目管理。",
     technology: ["IntelliJ", "Kotlin", "XML", "端口通讯", "gradle", "git"],
     job: "独立负责项目搭建、界面开发、通讯协议工具封装、对接后端接口，参与讨论整个项目的设计与交互，并负责项目的后期维护，迭代升级工作。",
-    contribution: [""],
+    contribution: [
+      "独立完成功能开发",
+      "学习Kotlin语言及Android原生相关基础知识",
+      "完成预研，实现原生基础页面功能、端口通讯功能",
+      "完成硬件端口通讯协议对接",
+    ],
   },
   {
     name: "安电U-微信小程序",
@@ -205,7 +235,12 @@ export const projects: Porject[] = [
       "git",
     ],
     job: "独立负责项目搭建、前端开发、工具封装、对接后端接口，参与讨论整个项目的设计与交互，并负责项目的后期维护，迭代升级工作。",
-    contribution: [""],
+    contribution: [
+      "独立完成功能开发",
+      "使用微信小程序原生封装通用组件库，提高开发效率",
+      "微信无感登录",
+      "Echart复杂图表实现",
+    ],
   },
   {
     name: "智维U-Web",
@@ -221,7 +256,7 @@ export const projects: Porject[] = [
       "git",
     ],
     job: "参与项目前端开发、模块组件封装、对接后端接口，参与讨论整个项目的设计与交互，并负责相关模块的后期维护，迭代升级工作",
-    contribution: [""],
+    contribution: ["完成主要功能开发", "微信登录SDK接入"],
   },
   {
     name: "优加云",
@@ -237,7 +272,7 @@ export const projects: Porject[] = [
       "单点登录",
     ],
     job: "独立负责项目前端开发、模块组件封装、对接后端接口、对接跳转其他项目产品，参与讨论整个项目的设计与交互，并负责相关模块的后期维护，迭代升级工作",
-    contribution: [""],
+    contribution: ["独立完成功能开发", "单点登录", "微信登录SDK接入"],
   },
   {
     name: "医美咖微信小程序",
@@ -253,6 +288,12 @@ export const projects: Porject[] = [
       "less",
     ],
     job: "独立负责项目搭建、前端开发、工具封装、对接后端接口，参与讨论整个项目的设计与交互，并负 责项目的后期维护，迭代升级工作。",
-    contribution: [""],
+    contribution: [
+      "独立完成功能开发",
+      "使用微信小程序原生封装项目组件库，提高开发效率",
+      "微信支付",
+      "微信无感登录",
+      "模块分包加载",
+    ],
   },
 ];
