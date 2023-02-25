@@ -68,8 +68,10 @@ const Resume = () => {
             <div className={styles.base_info_item}>
               <Icon code="icon-aihao" color="#da5353" size={24} />：
             </div>
-            {hobby.map((each) => (
-              <div className={styles.base_info_item}>{each}</div>
+            {hobby.map((each, index) => (
+              <div className={styles.base_info_item} key={index}>
+                {each}
+              </div>
             ))}
           </div>
         </div>
