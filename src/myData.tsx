@@ -2,6 +2,9 @@ import moment from "moment";
 import React from "react";
 import Icon from "./Com/Icon";
 
+import "moment/locale/zh-cn";
+moment.locale("zh-cn");
+
 interface TimeRange {
   start: number;
   end: number;

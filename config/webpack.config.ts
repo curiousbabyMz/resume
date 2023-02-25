@@ -1,24 +1,28 @@
 require("@babel/register");
-import path from "path";
-import webpack from "webpack";
 import hwp from "html-webpack-plugin";
+import path from "path";
+
 module.exports = {
-  mode: "development",
-  entry: path.resolve(__dirname, "src/index.tsx"),
+  mode: process.env.NODE_ENV,
+  entry: path.resolve(__dirname, "../src/index.tsx"),
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
   },
-  devServer: {
-    port: 8000,
-  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: ["babel-loader"],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+            },
+          },
+        ],
         include: /src/,
       },
       {
@@ -51,9 +55,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new hwp({
-      template: path.resolve(__dirname, "src/index.html"),
+      template: path.resolve(__dirname, "../src/index.html"),
       favicon: "",
     }),
   ],
