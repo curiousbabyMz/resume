@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import moment from "moment";
+import dayJs from "dayjs";
 import { baseInfo, companys, projects } from "../../myData";
 import DetailTitle from "../DetailTitle";
 import Icon from "../Icon";
@@ -7,14 +7,13 @@ import styles from "./index.scss";
 
 const Time = ({ time: { start, end }, className }) => (
   <div className={className}>
-    {moment(start).format("YYYY.MM")} -{" "}
-    {moment().format("YYYY.MM.DD HH:MM") ===
-    moment(end).format("YYYY.MM.DD HH:MM")
+    {dayJs(start).format("YYYY.MM")} -{" "}
+    {dayJs().format("YYYY.MM.DD HH:MM") ===
+    dayJs(end).format("YYYY.MM.DD HH:MM")
       ? "至今"
-      : moment(end).format("YYYY.MM")}
+      : dayJs(end).format("YYYY.MM")}
   </div>
 );
-window.moment = moment;
 
 const Resume = () => {
   const { photo, hobby, name, mobile, email, wechat, sex, selfAppraisal } =

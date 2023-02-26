@@ -11,9 +11,9 @@ var client = __webpack_require__(745);
 var react = __webpack_require__(294);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 5 modules
 var slicedToArray = __webpack_require__(152);
-// EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment = __webpack_require__(381);
-var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
+// EXTERNAL MODULE: ./node_modules/dayjs/dayjs.min.js
+var dayjs_min = __webpack_require__(484);
+var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
 var defineProperty = __webpack_require__(572);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
@@ -106,14 +106,14 @@ var Icon_Icon = function Icon(_ref) {
   }));
 };
 /* harmony default export */ var src_Com_Icon = (Icon_Icon);
-// EXTERNAL MODULE: ./node_modules/moment/locale/zh-cn.js
-var zh_cn = __webpack_require__(839);
+// EXTERNAL MODULE: ./node_modules/dayjs/locale/zh-cn.js
+var zh_cn = __webpack_require__(852);
 ;// CONCATENATED MODULE: ./src/myData.tsx
 
 
 
 
-moment_default().locale("zh-cn");
+dayjs_min_default().locale("zh-cn");
 var mobile = "18948180248";
 var baseInfo = {
   name: "庄嘉敏",
@@ -145,8 +145,8 @@ var baseInfo = {
   wechat: mobile,
   education: [{
     time: {
-      start: +moment_default()("2010.09"),
-      end: +moment_default()("2014.07")
+      start: +dayjs_min_default()("2010.09"),
+      end: +dayjs_min_default()("2014.07")
     },
     qualification: "本科",
     subject: "生物工程",
@@ -158,32 +158,32 @@ var companys = [{
   name: "安徽省刀锋网络科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +moment_default()("2022.04"),
-    end: +moment_default()("2023.2.16")
+    start: +dayjs_min_default()("2022.04"),
+    end: +dayjs_min_default()("2023.2.16")
   },
   job: "主要负责 Web 端、移动端 H5、后台管理系统相关项目开发； 负责新技术及框架的预研与探索应用；负责项目研发流程及代码管理规范的制定和优化；功能基建和公共模块的抽象维护；业务数据结构(多端)规范的讨论、协作完善交互逻辑与设计； 负责项目前端代码的优化维护和迭代升级工作；"
 }, {
   name: "清科优能（深圳）科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +moment_default()("2020.03"),
-    end: +moment_default()("2022.04")
+    start: +dayjs_min_default()("2020.03"),
+    end: +dayjs_min_default()("2022.04")
   },
   job: " 小程序前端开发， PC-web 前端开发，安卓端应用开发，主要负责移动端相关项目开发； 负责新技术探索；参与讨论项目流程与交互逻辑设计； 配合后台完成接口调试； 负责项目前端代码的维护和迭代升级工作；"
 }, {
   name: "深圳市医美咖网络科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +moment_default()("2019.02"),
-    end: +moment_default()("2020.03")
+    start: +dayjs_min_default()("2019.02"),
+    end: +dayjs_min_default()("2020.03")
   },
   job: "对接产品，分析业务需求；设计程序整体结构、工具封装； 根据 UI 设计搭建前端页面； 对接后端接口，数据交换；实现业务逻辑、页面交互；协助管理后台页面开发、接口对接；"
 }, {
   name: "深圳市眼界科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +moment_default()("2016.11"),
-    end: +moment_default()("2019.02")
+    start: +dayjs_min_default()("2016.11"),
+    end: +dayjs_min_default()("2019.02")
   },
   job: "web 前端开发，小程序前端开发，主要负责小程序项目开发； 负责新技术探索；参与讨论项目流程设计与交互逻辑； 与设计师协作完成界面开发工作； 配合后台完成接口调试；负责项目前端代码的维护和迭代升级工作；"
 }];
@@ -349,9 +349,8 @@ var Time = function Time(_ref) {
     className = _ref.className;
   return /*#__PURE__*/react.createElement("div", {
     className: className
-  }, moment_default()(start).format("YYYY.MM"), " -", " ", moment_default()().format("YYYY.MM.DD HH:MM") === moment_default()(end).format("YYYY.MM.DD HH:MM") ? "至今" : moment_default()(end).format("YYYY.MM"));
+  }, dayjs_min_default()(start).format("YYYY.MM"), " -", " ", dayjs_min_default()().format("YYYY.MM.DD HH:MM") === dayjs_min_default()(end).format("YYYY.MM.DD HH:MM") ? "至今" : dayjs_min_default()(end).format("YYYY.MM"));
 };
-window.moment = (moment_default());
 var Resume_Resume = function Resume() {
   var photo = baseInfo.photo,
     hobby = baseInfo.hobby,

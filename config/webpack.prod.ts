@@ -53,7 +53,7 @@ module.exports = merge(require("./webpack.config"), {
     new BundleAnalyzerPlugin(),
     new webpack.IgnorePlugin({
       resourceRegExp: /^\.\/locale$/,
-      contextRegExp: /moment$/,
+      contextRegExp: /dayjs$/,
     }),
   ],
 });
