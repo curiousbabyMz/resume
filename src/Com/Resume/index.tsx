@@ -1,5 +1,5 @@
+import dayjs from "dayjs";
 import React, { Fragment, useEffect, useState } from "react";
-import dayJs from "dayjs";
 import { baseInfo, companys, projects } from "../../myData";
 import DetailTitle from "../DetailTitle";
 import Icon from "../Icon";
@@ -7,18 +7,26 @@ import styles from "./index.scss";
 
 const Time = ({ time: { start, end }, className }) => (
   <div className={className}>
-    {dayJs(start).format("YYYY.MM")} -{" "}
-    {dayJs().format("YYYY.MM.DD HH:MM") ===
-    dayJs(end).format("YYYY.MM.DD HH:MM")
+    {dayjs(start).format("YYYY.MM")} -{" "}
+    {dayjs().format("YYYY.MM.DD HH:MM") ===
+    dayjs(end).format("YYYY.MM.DD HH:MM")
       ? "至今"
-      : dayJs(end).format("YYYY.MM")}
+      : dayjs(end).format("YYYY.MM")}
   </div>
 );
 
 const Resume = () => {
   const { photo, hobby, name, mobile, email, wechat, sex, selfAppraisal } =
     baseInfo;
-  const [isPrint, setIsPrint] = useState(true);
+
+  const baseInfolist = [
+    { icon: "icon-nansheng", iconSize: 16, content: sex },
+    { icon: "icon-dianhua", iconSize: 24, content: mobile },
+    { icon: "icon-weixin", iconSize: 24, content: wechat },
+    { icon: "icon-youxiang", iconSize: 24, content: email },
+  ];
+
+  // const [isPrint, setIsPrint] = useState(true);
   useEffect(() => {
     // console.log("call \"isPrint(flag:Boolean)\" see more");
     // window["isPrint"] = (flag) => {
@@ -46,29 +54,19 @@ const Resume = () => {
         <div className={styles.base_info}>
           <div className={styles.name}>{name}</div>
           <div className={styles.base_info_items}>
-            <div className={styles.base_info_item}>
-              <Icon code="icon-nansheng" color="#000000" size={16} />:
-              <span className={styles.content}>{sex}</span>
-            </div>
-            <div className={styles.base_info_item}>
-              <Icon code="icon-dianhua" color="#000000" size={24} />:
-              <span className={styles.content}>{mobile}</span>
-            </div>
-            <div className={styles.base_info_item}>
-              <Icon code="icon-weixin" color="#000000" size={24} />:
-              <span className={styles.content}>{wechat}</span>
-            </div>
-            <div className={styles.base_info_item}>
-              <Icon code="icon-youxiang" color="#000000" size={24} />:
-              <span className={styles.content}>{email}</span>
-            </div>
+            {baseInfolist.map(({ icon, iconSize, content }) => (
+              <div className={styles.base_info_item}>
+                <Icon code={icon} color="#000000" size={iconSize} />:
+                <span className={styles.content}>{content}</span>
+              </div>
+            ))}
           </div>
-          <div className={`${styles.hobby} ${styles.base_info_items}`}>
-            <div className={styles.base_info_item}>
+          <div className={`${styles.hobbys}`}>
+            <div className={styles.hobbys_label}>
               <Icon code="icon-aihao" color="#da5353" size={24} />：
             </div>
             {hobby.map((each, index) => (
-              <div className={styles.base_info_item} key={index}>
+              <div className={styles.hobby} key={index}>
                 {each}
               </div>
             ))}

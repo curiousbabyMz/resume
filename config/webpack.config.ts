@@ -26,29 +26,14 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.s[ac]ss$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-              modules: {
-                localIdentName: "[local]-[hash:8]",
-              },
-            },
-          },
-          "postcss-loader",
-          "sass-loader",
-        ],
-      },
-      {
         test: /\.(jpg|png)$/,
+        include: /src/,
         use: {
           loader: "url-loader",
           options: {
             esModule: false,
             limit: 1024 * 2,
+            name: "imgs/[name]-[hash:8].[ext]",
           },
         },
       },

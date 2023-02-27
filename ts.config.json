@@ -7,6 +7,7 @@
     "target": "es5",
     "jsx": "react",
     "compileOnSave": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["./src/**/*"],

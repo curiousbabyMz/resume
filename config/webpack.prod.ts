@@ -1,59 +1,97 @@
-require("@babel/register");
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
+import SpeedMeasurePlugin from "speed-measure-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { merge } from "webpack-merge";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 
-module.exports = merge(require("./webpack.config"), {
-  // entry: path.resolve(__dirname, "src/index.tsx"),
-  output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "../dist"),
-    clean: {
-      // keep: /dll/,
+const smp = new SpeedMeasurePlugin();
+
+module.exports =
+  //  smp.wrap(
+  merge(require("./webpack.config"), {
+    output: {
+      filename: "js/[name]-[hash:8]-bundle.js",
+      path: path.resolve(__dirname, "../dist"),
+      clean: {
+        // keep: /dll/,
+      },
     },
-  },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        test: /\.[jt]sx?$/,
-        include: /src/,
-      }),
-    ],
-    runtimeChunk: {
-      name: "manifest",
-    },
-    splitChunks: {
-      chunks: "all",
-      minSize: 20 * 1024,
-      cacheGroups: {
-        vendor: {
-          priority: 1,
-          name: "vendor",
-          test: /[\\/]node_modules[\\/]/,
-          chunks: "initial",
-          minSize: 0,
-          minChunks: 1,
+    cache: true,
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+          test: /\.[jt]sx?$/,
+          include: /src/,
+          terserOptions: {
+            compress: true,
+          },
+        }),
+        new CssMinimizerPlugin({
+          include: /src/,
+        }),
+      ],
+      runtimeChunk: {
+        name: "manifest",
+      },
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            chunks: "all",
+            priority: 1,
+            name: "vendor",
+            test: /[\\/]node_modules[\\/]/,
+            reuseExistingChunk: true,
+          },
+          react: {
+            chunks: "all",
+            priority: 2,
+            name: "react",
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          },
+          styles: {
+            chunks: "all",
+            name: "css/styles",
+            type: "css/mini-extract",
+            enforce: true,
+          },
         },
       },
     },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
+    module: {
+      rules: [
+        {
+          test: /\.s[ac]ss$/,
+          include: /src/,
+          use: [
+            // "style-loader",
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                esModule: true,
+                importLoaders: 1,
+                modules: {
+                  localIdentName: "[local]-[hash:8]",
+                },
+              },
+            },
+            "postcss-loader",
+            "sass-loader",
+          ],
+        },
+      ],
+    },
+    plugins: [
+      // new BundleAnalyzerPlugin(),
+      new MiniCssExtractPlugin(),
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^\.\/locale$/,
+        contextRegExp: /dayjs$/,
+      }),
     ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin(),
-    new webpack.IgnorePlugin({
-      resourceRegExp: /^\.\/locale$/,
-      contextRegExp: /dayjs$/,
-    }),
-  ],
-});
+  });
+// );

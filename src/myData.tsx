@@ -1,9 +1,9 @@
-import dayJs from "dayjs";
+import dayjs from "dayjs";
 import React from "react";
 import Icon from "./Com/Icon";
 
-import "dayjs/locale/zh-cn";
-dayJs.locale("zh-cn");
+// import "dayjs/locale/zh-cn";
+// dayjs.locale("zh-cn");
 
 interface TimeRange {
   start: number;
@@ -57,7 +57,7 @@ export const baseInfo: BaseInfo = {
   wechat: mobile,
   education: [
     {
-      time: { start: +dayJs("2010.09"), end: +dayJs("2014.07") },
+      time: { start: +dayjs("2010.09"), end: +dayjs("2014.07") },
       qualification: "本科",
       subject: "生物工程",
       school: "广东石油化工学院",
@@ -74,25 +74,25 @@ export const companys: Company[] = [
   {
     name: "安徽省刀锋网络科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayJs("2022.04"), end: +dayJs("2023.2.16") },
+    time: { start: +dayjs("2022.04"), end: +dayjs("2023.2.16") },
     job: "主要负责 Web 端、移动端 H5、后台管理系统相关项目开发； 负责新技术及框架的预研与探索应用；负责项目研发流程及代码管理规范的制定和优化；功能基建和公共模块的抽象维护；业务数据结构(多端)规范的讨论、协作完善交互逻辑与设计； 负责项目前端代码的优化维护和迭代升级工作；",
   },
   {
     name: "清科优能（深圳）科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayJs("2020.03"), end: +dayJs("2022.04") },
+    time: { start: +dayjs("2020.03"), end: +dayjs("2022.04") },
     job: " 小程序前端开发， PC-web 前端开发，安卓端应用开发，主要负责移动端相关项目开发； 负责新技术探索；参与讨论项目流程与交互逻辑设计； 配合后台完成接口调试； 负责项目前端代码的维护和迭代升级工作；",
   },
   {
     name: "深圳市医美咖网络科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayJs("2019.02"), end: +dayJs("2020.03") },
+    time: { start: +dayjs("2019.02"), end: +dayjs("2020.03") },
     job: "对接产品，分析业务需求；设计程序整体结构、工具封装； 根据 UI 设计搭建前端页面； 对接后端接口，数据交换；实现业务逻辑、页面交互；协助管理后台页面开发、接口对接；",
   },
   {
     name: "深圳市眼界科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayJs("2016.11"), end: +dayJs("2019.02") },
+    time: { start: +dayjs("2016.11"), end: +dayjs("2019.02") },
     job: "web 前端开发，小程序前端开发，主要负责小程序项目开发； 负责新技术探索；参与讨论项目流程设计与交互逻辑； 与设计师协作完成界面开发工作； 配合后台完成接口调试；负责项目前端代码的维护和迭代升级工作；",
   },
 ];
