@@ -5,7 +5,7 @@ import Icon from "./Com/Icon";
 // import "dayjs/locale/zh-cn";
 // dayjs.locale("zh-cn");
 
-interface TimeRange {
+export interface TimeRange {
   start: number;
   end: number;
 }
@@ -14,11 +14,15 @@ interface BaseInfo {
   photo: any;
   mobile: string;
   hobby: JSX.Element[];
+  birthday: number;
+  married: boolean;
   sex: string;
   email: string;
   wechat: string;
   education: Education[];
   selfAppraisal: string[];
+  advantage: string[];
+  technology: string[];
 }
 interface Education {
   time: TimeRange;
@@ -45,6 +49,8 @@ export const baseInfo: BaseInfo = {
   name: "庄嘉敏",
   photo: require("./imgs/avatar.jpg"),
   mobile,
+  birthday: +dayjs("1992/02/04"),
+  married: false,
   sex: "男",
   hobby: [
     <Icon code="icon-youxi" size={20} color="#515151" />,
@@ -57,42 +63,65 @@ export const baseInfo: BaseInfo = {
   wechat: mobile,
   education: [
     {
-      time: { start: +dayjs("2010.09"), end: +dayjs("2014.07") },
+      time: { start: +dayjs("2010/09"), end: +dayjs("2014/07") },
       qualification: "本科",
       subject: "生物工程",
       school: "广东石油化工学院",
     },
   ],
+  advantage: [
+    "工作经验丰富：7年工作经验，熟悉多种行业场景，熟练掌握前端主流技术框架",
+    "掌握多种前端技术生态圈：历任公司的项目场景丰富，应用到了vue及react前端框架，两个框架的使用累积了很多经验；负责过微信小程序、公众号、微信开放平台接入，熟悉微信开放生态；负责过跨端需求，了解Uni-app、taro等框架；手写过canvas可视化类库，项目使用过echarts、Antv-x6等可视化框架，接入高德SDK、threejs实现3D展示以实现可视化需求，实现过可视化编辑模块；负责过对接硬件需求，了解android原生开发、kotlin语言及usb端口通讯协议对接",
+    "业务能力：项目中基本承担核心业务开发、项目主导、公共抽象、性能优化、结构优化等工作。",
+    "学习能力：多次承接公司的新型项目需求，对新技术框架进行预研，评估项目可行性，针对新技术框架协助调整产品实现，推动项目落地，并负责后期优化迭代",
+    "架构能力：擅长业务分析及公共抽象，主张贯彻代码结构分层以及OOP编程原则，周期性复查业务代码，力求代码简洁、功能分明、原子化，使代码更富有可维护性、灵活性、健壮性",
+  ],
+  technology: [
+    "掌握vue、react两大web前端框架及路由管理、状态管理等相关生态",
+    "熟悉ES6+新特性，async/await、promise等异步编程",
+    "熟悉Typescript及数据模型管理",
+    "熟悉Git代码管理，Git-flow工作流",
+    "熟悉webpack、babel、vite等前端工程化工具",
+    "熟悉ElementUI、Ant-design、Boostrap等UI框架，熟悉flex-box布局",
+    "熟悉echarts、Antv、threejs等可视化相关框架技术",
+    "熟悉微信生态圈，小程序、公众号、微信登录授权及微信支付等",
+    "熟悉高德地图服务、友盟超链服务、阿里云风控服务、数数科技数据统计服务、等第三方服务",
+    "掌握Kotlin语言基础，协程应用，Android原生开发等技术",
+    "深度参与过医美电商系统，订单管理、商家入驻管理、医生登记注册管理、商家端、消费者端等开发工作",
+    "深度参与过IOT云平台，多端展示、大屏展示、实时监测数据可视化等开发工作",
+    "独立负责软硬件通讯工具app开发工作",
+    "深度参与过类discord社交社区平台开发工作，包括群聊、消息、帖子、话题、活动等核心IM功能，相关话题管理、帖子管理、热搜管理、权限管理等后台开发以及裂变活动全流程开发",
+  ],
   selfAppraisal: [
     "本人兴趣广泛，对新鲜事物充满好奇，有探索精神，学习能力较好，通过自学熟悉掌握基础 web 前端技术；",
     "工作中善于协作沟通，总结研发工作的规范流程，习惯对代码做整理，抽象公共提高效益，常以项目需求作为驱动方向，自主研究新技术，并因此熟悉掌握；",
-    "目前涉及到的技术框架主要有微信小程序开发，授权及支付流程，云开发平台及微信开放生态；canvas 帧动画技术、ES6+新特性，React、Vuejs 响应式原理及组件特性，elementUI、Antd UI框架和 Nodejs 应用；可视化框架及技术，3D渲染技术。",
+    "目前涉及到的技术框架主要有React、Vue框架，elementUI、antd UI组件库，webpack，微信小程序开发，Uni-app框架，微信开放生态、登录授权及支付，IOT云平台开发；canvas 帧动画、threejs3D渲染，Echarts、Antv-x6等可视化框架；Nodejs 应用；Kotlin-android应用。",
   ],
 };
 
 export const companys: Company[] = [
   {
-    name: "安徽省刀锋网络科技有限公司",
+    name: "安徽省刀锋网络科技有限公司（深圳分公司）",
     position: "前端开发工程师",
-    time: { start: +dayjs("2022.04"), end: +dayjs("2023.2.16") },
+    time: { start: +dayjs("2022/04"), end: +dayjs("2023.2.16") },
     job: "主要负责 Web 端、移动端 H5、后台管理系统相关项目开发； 负责新技术及框架的预研与探索应用；负责项目研发流程及代码管理规范的制定和优化；功能基建和公共模块的抽象维护；业务数据结构(多端)规范的讨论、协作完善交互逻辑与设计； 负责项目前端代码的优化维护和迭代升级工作；",
   },
   {
     name: "清科优能（深圳）科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayjs("2020.03"), end: +dayjs("2022.04") },
+    time: { start: +dayjs("2020/03"), end: +dayjs("2022/04") },
     job: " 小程序前端开发， PC-web 前端开发，安卓端应用开发，主要负责移动端相关项目开发； 负责新技术探索；参与讨论项目流程与交互逻辑设计； 配合后台完成接口调试； 负责项目前端代码的维护和迭代升级工作；",
   },
   {
     name: "深圳市医美咖网络科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayjs("2019.02"), end: +dayjs("2020.03") },
+    time: { start: +dayjs("2019/02"), end: +dayjs("2020/03") },
     job: "对接产品，分析业务需求；设计程序整体结构、工具封装； 根据 UI 设计搭建前端页面； 对接后端接口，数据交换；实现业务逻辑、页面交互；协助管理后台页面开发、接口对接；",
   },
   {
     name: "深圳市眼界科技有限公司",
     position: "前端开发工程师",
-    time: { start: +dayjs("2016.11"), end: +dayjs("2019.02") },
+    time: { start: +dayjs("2016/11"), end: +dayjs("2019/02") },
     job: "web 前端开发，小程序前端开发，主要负责小程序项目开发； 负责新技术探索；参与讨论项目流程设计与交互逻辑； 与设计师协作完成界面开发工作； 配合后台完成接口调试；负责项目前端代码的维护和迭代升级工作；",
   },
 ];

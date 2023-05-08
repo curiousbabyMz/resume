@@ -5,6 +5,7 @@ import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
 import { merge } from "webpack-merge";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import CompressionPlugin from "compression-webpack-plugin";
 
 const smp = new SpeedMeasurePlugin();
 
@@ -20,6 +21,7 @@ module.exports =
     },
     cache: true,
     optimization: {
+      usedExports: true,
       minimize: true,
       minimizer: [
         new TerserPlugin({
@@ -32,6 +34,13 @@ module.exports =
         }),
         new CssMinimizerPlugin({
           include: /src/,
+          parallel: true,
+        }),
+        new CompressionPlugin({
+          test: /\.(css|tsx|js)$/,
+          threshold: 500,
+          minRatio: 0.7,
+          algorithm: "gzip",
         }),
       ],
       runtimeChunk: {

@@ -516,16 +516,16 @@ if (true) {
 /***/ }),
 
 /***/ 82:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(module) {
 
-module.exports = __webpack_require__.p + "imgs/avatar-b6090af9.jpg";
+module.exports = "./imgs/avatar-b6090af9.jpg";
 
 /***/ }),
 
 /***/ 185:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(module) {
 
-module.exports = __webpack_require__.p + "imgs/banner-ac9a4190.png";
+module.exports = "./imgs/banner-ac9a4190.png";
 
 /***/ })
 

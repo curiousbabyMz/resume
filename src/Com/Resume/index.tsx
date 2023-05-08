@@ -1,11 +1,18 @@
 import dayjs from "dayjs";
-import React, { Fragment, useEffect, useState } from "react";
-import { baseInfo, companys, projects } from "../../myData";
+import duration from "dayjs/plugin/duration";
+import React, { Fragment, useEffect } from "react";
+import { TimeRange, baseInfo, companys, projects } from "../../myData";
 import DetailTitle from "../DetailTitle";
 import Icon from "../Icon";
 import styles from "./index.scss";
 
-const Time = ({ time: { start, end }, className }) => (
+dayjs.extend(duration);
+
+interface TimeProps {
+  time: TimeRange;
+  className: string;
+}
+const Time = ({ time: { start, end }, className }: TimeProps) => (
   <div className={className}>
     {dayjs(start).format("YYYY.MM")} -{" "}
     {dayjs().format("YYYY.MM.DD HH:MM") ===
@@ -16,11 +23,31 @@ const Time = ({ time: { start, end }, className }) => (
 );
 
 const Resume = () => {
-  const { photo, hobby, name, mobile, email, wechat, sex, selfAppraisal } =
-    baseInfo;
+  const {
+    photo,
+    hobby,
+    name,
+    mobile,
+    email,
+    wechat,
+    sex,
+    selfAppraisal,
+    married,
+    birthday,
+  } = baseInfo;
 
   const baseInfolist = [
     { icon: "icon-nansheng", iconSize: 16, content: sex },
+    {
+      icon: "icon-nianling",
+      iconSize: 16,
+      content: `${dayjs.duration(dayjs().diff(dayjs(birthday))).years()}岁`,
+    },
+    {
+      icon: "icon-hunyinjiashi",
+      iconSize: 16,
+      content: married ? "已婚" : "未婚",
+    },
     { icon: "icon-dianhua", iconSize: 24, content: mobile },
     { icon: "icon-weixin", iconSize: 24, content: wechat },
     { icon: "icon-youxiang", iconSize: 24, content: email },
@@ -54,8 +81,8 @@ const Resume = () => {
         <div className={styles.base_info}>
           <div className={styles.name}>{name}</div>
           <div className={styles.base_info_items}>
-            {baseInfolist.map(({ icon, iconSize, content }) => (
-              <div className={styles.base_info_item}>
+            {baseInfolist.map(({ icon, iconSize, content }, index) => (
+              <div className={styles.base_info_item} key={index}>
                 <Icon code={icon} color="#000000" size={iconSize} />:
                 <span className={styles.content}>{content}</span>
               </div>
@@ -82,6 +109,22 @@ const Resume = () => {
               <div className={styles.qualification}>{qualification}</div>
               <Time className={styles.time} time={time} />
             </div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.detail}>
+        <DetailTitle code="icon-ruanjianjineng" title="个人技能" />
+        <div className={styles.technology}>
+          {baseInfo.technology.map((each) => (
+            <div className={styles.content}>{each}</div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.detail}>
+        <DetailTitle code="icon-jiangli" title="个人优势" />
+        <div className={styles.advantage}>
+          {baseInfo.advantage.map((each) => (
+            <div className={styles.content}>{each}</div>
           ))}
         </div>
       </div>
