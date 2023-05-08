@@ -12,6 +12,9 @@ var react = __webpack_require__(294);
 // EXTERNAL MODULE: ./node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__(484);
 var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
+// EXTERNAL MODULE: ./node_modules/dayjs/plugin/duration.js
+var duration = __webpack_require__(646);
+var duration_default = /*#__PURE__*/__webpack_require__.n(duration);
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -74,6 +77,8 @@ const baseInfo = {
   name: "庄嘉敏",
   photo: __webpack_require__(82),
   mobile,
+  birthday: +dayjs_min_default()("1992/02/04"),
+  married: false,
   sex: "男",
   hobby: [/*#__PURE__*/react.createElement(Com_Icon, {
     code: "icon-youxi",
@@ -100,20 +105,22 @@ const baseInfo = {
   wechat: mobile,
   education: [{
     time: {
-      start: +dayjs_min_default()("2010.09"),
-      end: +dayjs_min_default()("2014.07")
+      start: +dayjs_min_default()("2010/09"),
+      end: +dayjs_min_default()("2014/07")
     },
     qualification: "本科",
     subject: "生物工程",
     school: "广东石油化工学院"
   }],
-  selfAppraisal: ["本人兴趣广泛，对新鲜事物充满好奇，有探索精神，学习能力较好，通过自学熟悉掌握基础 web 前端技术；", "工作中善于协作沟通，总结研发工作的规范流程，习惯对代码做整理，抽象公共提高效益，常以项目需求作为驱动方向，自主研究新技术，并因此熟悉掌握；", "目前涉及到的技术框架主要有微信小程序开发，授权及支付流程，云开发平台及微信开放生态；canvas 帧动画技术、ES6+新特性，React、Vuejs 响应式原理及组件特性，elementUI、Antd UI框架和 Nodejs 应用；可视化框架及技术，3D渲染技术。"]
+  advantage: ["工作经验丰富：7年工作经验，熟悉多种行业场景，熟练掌握前端主流技术框架", "掌握多种前端技术生态圈：历任公司的项目场景丰富，应用到了vue及react前端框架，两个框架的使用累积了很多经验；负责过微信小程序、公众号、微信开放平台接入，熟悉微信开放生态；负责过跨端需求，了解Uni-app、taro等框架；手写过canvas可视化类库，项目使用过echarts、Antv-x6等可视化框架，接入高德SDK、threejs实现3D展示以实现可视化需求，实现过可视化编辑模块；负责过对接硬件需求，了解android原生开发、kotlin语言及usb端口通讯协议对接", "业务能力：项目中基本承担核心业务开发、项目主导、公共抽象、性能优化、结构优化等工作。", "学习能力：多次承接公司的新型项目需求，对新技术框架进行预研，评估项目可行性，针对新技术框架协助调整产品实现，推动项目落地，并负责后期优化迭代", "架构能力：擅长业务分析及公共抽象，主张贯彻代码结构分层以及OOP编程原则，周期性复查业务代码，力求代码简洁、功能分明、原子化，使代码更富有可维护性、灵活性、健壮性"],
+  technology: ["掌握vue、react两大web前端框架及路由管理、状态管理等相关生态", "熟悉ES6+新特性，async/await、promise等异步编程", "熟悉Typescript及数据模型管理", "熟悉Git代码管理，Git-flow工作流", "熟悉webpack、babel、vite等前端工程化工具", "熟悉ElementUI、Ant-design、Boostrap等UI框架，熟悉flex-box布局", "熟悉echarts、Antv、threejs等可视化相关框架技术", "熟悉微信生态圈，小程序、公众号、微信登录授权及微信支付等", "熟悉高德地图服务、友盟超链服务、阿里云风控服务、数数科技数据统计服务、等第三方服务", "掌握Kotlin语言基础，协程应用，Android原生开发等技术", "深度参与过医美电商系统，订单管理、商家入驻管理、医生登记注册管理、商家端、消费者端等开发工作", "深度参与过IOT云平台，多端展示、大屏展示、实时监测数据可视化等开发工作", "独立负责软硬件通讯工具app开发工作", "深度参与过类discord社交社区平台开发工作，包括群聊、消息、帖子、话题、活动等核心IM功能，相关话题管理、帖子管理、热搜管理、权限管理等后台开发以及裂变活动全流程开发"],
+  selfAppraisal: ["本人兴趣广泛，对新鲜事物充满好奇，有探索精神，学习能力较好，通过自学熟悉掌握基础 web 前端技术；", "工作中善于协作沟通，总结研发工作的规范流程，习惯对代码做整理，抽象公共提高效益，常以项目需求作为驱动方向，自主研究新技术，并因此熟悉掌握；", "目前涉及到的技术框架主要有React、Vue框架，elementUI、antd UI组件库，webpack，微信小程序开发，Uni-app框架，微信开放生态、登录授权及支付，IOT云平台开发；canvas 帧动画、threejs3D渲染，Echarts、Antv-x6等可视化框架；Nodejs 应用；Kotlin-android应用。"]
 };
 const companys = [{
-  name: "安徽省刀锋网络科技有限公司",
+  name: "安徽省刀锋网络科技有限公司（深圳分公司）",
   position: "前端开发工程师",
   time: {
-    start: +dayjs_min_default()("2022.04"),
+    start: +dayjs_min_default()("2022/04"),
     end: +dayjs_min_default()("2023.2.16")
   },
   job: "主要负责 Web 端、移动端 H5、后台管理系统相关项目开发； 负责新技术及框架的预研与探索应用；负责项目研发流程及代码管理规范的制定和优化；功能基建和公共模块的抽象维护；业务数据结构(多端)规范的讨论、协作完善交互逻辑与设计； 负责项目前端代码的优化维护和迭代升级工作；"
@@ -121,24 +128,24 @@ const companys = [{
   name: "清科优能（深圳）科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +dayjs_min_default()("2020.03"),
-    end: +dayjs_min_default()("2022.04")
+    start: +dayjs_min_default()("2020/03"),
+    end: +dayjs_min_default()("2022/04")
   },
   job: " 小程序前端开发， PC-web 前端开发，安卓端应用开发，主要负责移动端相关项目开发； 负责新技术探索；参与讨论项目流程与交互逻辑设计； 配合后台完成接口调试； 负责项目前端代码的维护和迭代升级工作；"
 }, {
   name: "深圳市医美咖网络科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +dayjs_min_default()("2019.02"),
-    end: +dayjs_min_default()("2020.03")
+    start: +dayjs_min_default()("2019/02"),
+    end: +dayjs_min_default()("2020/03")
   },
   job: "对接产品，分析业务需求；设计程序整体结构、工具封装； 根据 UI 设计搭建前端页面； 对接后端接口，数据交换；实现业务逻辑、页面交互；协助管理后台页面开发、接口对接；"
 }, {
   name: "深圳市眼界科技有限公司",
   position: "前端开发工程师",
   time: {
-    start: +dayjs_min_default()("2016.11"),
-    end: +dayjs_min_default()("2019.02")
+    start: +dayjs_min_default()("2016/11"),
+    end: +dayjs_min_default()("2019/02")
   },
   job: "web 前端开发，小程序前端开发，主要负责小程序项目开发； 负责新技术探索；参与讨论项目流程设计与交互逻辑； 与设计师协作完成界面开发工作； 配合后台完成接口调试；负责项目前端代码的维护和迭代升级工作；"
 }];
@@ -231,7 +238,7 @@ const DetailTitle_DetailTitle = _ref => {
 /* harmony default export */ var Com_DetailTitle = (DetailTitle_DetailTitle);
 ;// CONCATENATED MODULE: ./src/Com/Resume/index.scss
 // extracted by mini-css-extract-plugin
-/* harmony default export */ var Resume = ({"resume":"resume-bcf11cb9","header":"header-cd1bdec1","banner":"banner-ce9038dd","title":"title-d9008ddc","cn":"cn-eea69131","split":"split-a603eac8","en":"en-d43b6d99","info":"info-ff7ca5f7","avatar":"avatar-e83b3c13","base_info":"base_info-e5e245b0","name":"name-b2e70db4","base_info_items":"base_info_items-fdc64308","base_info_item":"base_info_item-c97a0652","content":"content-ff7d2967","hobbys":"hobbys-ed9c7225","hobbys_label":"hobbys_label-c83520cd","hobby":"hobby-d95233c0","detail":"detail-d5fac9dc","edu":"edu-ac1bdadb","item":"item-f3aaa162","school":"school-c9cf4635","qualification":"qualification-c6a3f2f9","companys":"companys-bfeca9e3","top":"top-fab13dac","position":"position-f1e7c847","job":"job-eeae038e","projects":"projects-b95c520c","technology":"technology-b9c4cfbe","description":"description-b77910f6","contribution":"contribution-be26df47","label":"label-f75c3484","self_appraisal":"self_appraisal-a990d80b"});
+/* harmony default export */ var Resume = ({"resume":"resume-bcf11cb9","header":"header-cd1bdec1","banner":"banner-ce9038dd","title":"title-d9008ddc","cn":"cn-eea69131","split":"split-a603eac8","en":"en-d43b6d99","info":"info-ff7ca5f7","avatar":"avatar-e83b3c13","base_info":"base_info-e5e245b0","name":"name-b2e70db4","base_info_items":"base_info_items-fdc64308","base_info_item":"base_info_item-c97a0652","content":"content-ff7d2967","hobbys":"hobbys-ed9c7225","hobbys_label":"hobbys_label-c83520cd","hobby":"hobby-d95233c0","detail":"detail-d5fac9dc","edu":"edu-ac1bdadb","item":"item-f3aaa162","school":"school-c9cf4635","qualification":"qualification-c6a3f2f9","advantage":"advantage-bbbfebe8","technology":"technology-b9c4cfbe","companys":"companys-bfeca9e3","top":"top-fab13dac","position":"position-f1e7c847","job":"job-eeae038e","projects":"projects-b95c520c","description":"description-b77910f6","contribution":"contribution-be26df47","label":"label-f75c3484","self_appraisal":"self_appraisal-a990d80b"});
 ;// CONCATENATED MODULE: ./src/Com/Resume/index.tsx
 
 
@@ -239,6 +246,8 @@ const DetailTitle_DetailTitle = _ref => {
 
 
 
+
+dayjs_min_default().extend((duration_default()));
 const Time = _ref => {
   let {
     time: {
@@ -260,12 +269,22 @@ const Resume_Resume = () => {
     email,
     wechat,
     sex,
-    selfAppraisal
+    selfAppraisal,
+    married,
+    birthday
   } = baseInfo;
   const baseInfolist = [{
     icon: "icon-nansheng",
     iconSize: 16,
     content: sex
+  }, {
+    icon: "icon-nianling",
+    iconSize: 16,
+    content: `${dayjs_min_default().duration(dayjs_min_default()().diff(dayjs_min_default()(birthday))).years()}岁`
+  }, {
+    icon: "icon-hunyinjiashi",
+    iconSize: 16,
+    content: married ? "已婚" : "未婚"
   }, {
     icon: "icon-dianhua",
     iconSize: 24,
@@ -315,14 +334,15 @@ const Resume_Resume = () => {
     className: Resume.name
   }, name), /*#__PURE__*/react.createElement("div", {
     className: Resume.base_info_items
-  }, baseInfolist.map(_ref2 => {
+  }, baseInfolist.map((_ref2, index) => {
     let {
       icon,
       iconSize,
       content
     } = _ref2;
     return /*#__PURE__*/react.createElement("div", {
-      className: Resume.base_info_item
+      className: Resume.base_info_item,
+      key: index
     }, /*#__PURE__*/react.createElement(Com_Icon, {
       code: icon,
       color: "#000000",
@@ -366,6 +386,24 @@ const Resume_Resume = () => {
       time: time
     }));
   }))), /*#__PURE__*/react.createElement("div", {
+    className: Resume.detail
+  }, /*#__PURE__*/react.createElement(Com_DetailTitle, {
+    code: "icon-ruanjianjineng",
+    title: "\u4E2A\u4EBA\u6280\u80FD"
+  }), /*#__PURE__*/react.createElement("div", {
+    className: Resume.technology
+  }, baseInfo.technology.map(each => /*#__PURE__*/react.createElement("div", {
+    className: Resume.content
+  }, each)))), /*#__PURE__*/react.createElement("div", {
+    className: Resume.detail
+  }, /*#__PURE__*/react.createElement(Com_DetailTitle, {
+    code: "icon-jiangli",
+    title: "\u4E2A\u4EBA\u4F18\u52BF"
+  }), /*#__PURE__*/react.createElement("div", {
+    className: Resume.advantage
+  }, baseInfo.advantage.map(each => /*#__PURE__*/react.createElement("div", {
+    className: Resume.content
+  }, each)))), /*#__PURE__*/react.createElement("div", {
     className: Resume.detail
   }, /*#__PURE__*/react.createElement(Com_DetailTitle, {
     code: "icon-gongzuojingyan",
@@ -472,6 +510,13 @@ root.render( /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*
 /***/ (function(module) {
 
 !function(t,e){ true?module.exports=e():0}(this,(function(){"use strict";var t=1e3,e=6e4,n=36e5,r="millisecond",i="second",s="minute",u="hour",a="day",o="week",f="month",h="quarter",c="year",d="date",l="Invalid Date",$=/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/,y=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,M={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(t){var e=["th","st","nd","rd"],n=t%100;return"["+t+(e[(n-20)%10]||e[n]||e[0])+"]"}},m=function(t,e,n){var r=String(t);return!r||r.length>=e?t:""+Array(e+1-r.length).join(n)+t},v={s:m,z:function(t){var e=-t.utcOffset(),n=Math.abs(e),r=Math.floor(n/60),i=n%60;return(e<=0?"+":"-")+m(r,2,"0")+":"+m(i,2,"0")},m:function t(e,n){if(e.date()<n.date())return-t(n,e);var r=12*(n.year()-e.year())+(n.month()-e.month()),i=e.clone().add(r,f),s=n-i<0,u=e.clone().add(r+(s?-1:1),f);return+(-(r+(n-i)/(s?i-u:u-i))||0)},a:function(t){return t<0?Math.ceil(t)||0:Math.floor(t)},p:function(t){return{M:f,y:c,w:o,d:a,D:d,h:u,m:s,s:i,ms:r,Q:h}[t]||String(t||"").toLowerCase().replace(/s$/,"")},u:function(t){return void 0===t}},g="en",D={};D[g]=M;var p=function(t){return t instanceof _},S=function t(e,n,r){var i;if(!e)return g;if("string"==typeof e){var s=e.toLowerCase();D[s]&&(i=s),n&&(D[s]=n,i=s);var u=e.split("-");if(!i&&u.length>1)return t(u[0])}else{var a=e.name;D[a]=e,i=a}return!r&&i&&(g=i),i||!r&&g},w=function(t,e){if(p(t))return t.clone();var n="object"==typeof e?e:{};return n.date=t,n.args=arguments,new _(n)},O=v;O.l=S,O.i=p,O.w=function(t,e){return w(t,{locale:e.$L,utc:e.$u,x:e.$x,$offset:e.$offset})};var _=function(){function M(t){this.$L=S(t.locale,null,!0),this.parse(t)}var m=M.prototype;return m.parse=function(t){this.$d=function(t){var e=t.date,n=t.utc;if(null===e)return new Date(NaN);if(O.u(e))return new Date;if(e instanceof Date)return new Date(e);if("string"==typeof e&&!/Z$/i.test(e)){var r=e.match($);if(r){var i=r[2]-1||0,s=(r[7]||"0").substring(0,3);return n?new Date(Date.UTC(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)):new Date(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)}}return new Date(e)}(t),this.$x=t.x||{},this.init()},m.init=function(){var t=this.$d;this.$y=t.getFullYear(),this.$M=t.getMonth(),this.$D=t.getDate(),this.$W=t.getDay(),this.$H=t.getHours(),this.$m=t.getMinutes(),this.$s=t.getSeconds(),this.$ms=t.getMilliseconds()},m.$utils=function(){return O},m.isValid=function(){return!(this.$d.toString()===l)},m.isSame=function(t,e){var n=w(t);return this.startOf(e)<=n&&n<=this.endOf(e)},m.isAfter=function(t,e){return w(t)<this.startOf(e)},m.isBefore=function(t,e){return this.endOf(e)<w(t)},m.$g=function(t,e,n){return O.u(t)?this[e]:this.set(n,t)},m.unix=function(){return Math.floor(this.valueOf()/1e3)},m.valueOf=function(){return this.$d.getTime()},m.startOf=function(t,e){var n=this,r=!!O.u(e)||e,h=O.p(t),l=function(t,e){var i=O.w(n.$u?Date.UTC(n.$y,e,t):new Date(n.$y,e,t),n);return r?i:i.endOf(a)},$=function(t,e){return O.w(n.toDate()[t].apply(n.toDate("s"),(r?[0,0,0,0]:[23,59,59,999]).slice(e)),n)},y=this.$W,M=this.$M,m=this.$D,v="set"+(this.$u?"UTC":"");switch(h){case c:return r?l(1,0):l(31,11);case f:return r?l(1,M):l(0,M+1);case o:var g=this.$locale().weekStart||0,D=(y<g?y+7:y)-g;return l(r?m-D:m+(6-D),M);case a:case d:return $(v+"Hours",0);case u:return $(v+"Minutes",1);case s:return $(v+"Seconds",2);case i:return $(v+"Milliseconds",3);default:return this.clone()}},m.endOf=function(t){return this.startOf(t,!1)},m.$set=function(t,e){var n,o=O.p(t),h="set"+(this.$u?"UTC":""),l=(n={},n[a]=h+"Date",n[d]=h+"Date",n[f]=h+"Month",n[c]=h+"FullYear",n[u]=h+"Hours",n[s]=h+"Minutes",n[i]=h+"Seconds",n[r]=h+"Milliseconds",n)[o],$=o===a?this.$D+(e-this.$W):e;if(o===f||o===c){var y=this.clone().set(d,1);y.$d[l]($),y.init(),this.$d=y.set(d,Math.min(this.$D,y.daysInMonth())).$d}else l&&this.$d[l]($);return this.init(),this},m.set=function(t,e){return this.clone().$set(t,e)},m.get=function(t){return this[O.p(t)]()},m.add=function(r,h){var d,l=this;r=Number(r);var $=O.p(h),y=function(t){var e=w(l);return O.w(e.date(e.date()+Math.round(t*r)),l)};if($===f)return this.set(f,this.$M+r);if($===c)return this.set(c,this.$y+r);if($===a)return y(1);if($===o)return y(7);var M=(d={},d[s]=e,d[u]=n,d[i]=t,d)[$]||1,m=this.$d.getTime()+r*M;return O.w(m,this)},m.subtract=function(t,e){return this.add(-1*t,e)},m.format=function(t){var e=this,n=this.$locale();if(!this.isValid())return n.invalidDate||l;var r=t||"YYYY-MM-DDTHH:mm:ssZ",i=O.z(this),s=this.$H,u=this.$m,a=this.$M,o=n.weekdays,f=n.months,h=function(t,n,i,s){return t&&(t[n]||t(e,r))||i[n].slice(0,s)},c=function(t){return O.s(s%12||12,t,"0")},d=n.meridiem||function(t,e,n){var r=t<12?"AM":"PM";return n?r.toLowerCase():r},$={YY:String(this.$y).slice(-2),YYYY:this.$y,M:a+1,MM:O.s(a+1,2,"0"),MMM:h(n.monthsShort,a,f,3),MMMM:h(f,a),D:this.$D,DD:O.s(this.$D,2,"0"),d:String(this.$W),dd:h(n.weekdaysMin,this.$W,o,2),ddd:h(n.weekdaysShort,this.$W,o,3),dddd:o[this.$W],H:String(s),HH:O.s(s,2,"0"),h:c(1),hh:c(2),a:d(s,u,!0),A:d(s,u,!1),m:String(u),mm:O.s(u,2,"0"),s:String(this.$s),ss:O.s(this.$s,2,"0"),SSS:O.s(this.$ms,3,"0"),Z:i};return r.replace(y,(function(t,e){return e||$[t]||i.replace(":","")}))},m.utcOffset=function(){return 15*-Math.round(this.$d.getTimezoneOffset()/15)},m.diff=function(r,d,l){var $,y=O.p(d),M=w(r),m=(M.utcOffset()-this.utcOffset())*e,v=this-M,g=O.m(this,M);return g=($={},$[c]=g/12,$[f]=g,$[h]=g/3,$[o]=(v-m)/6048e5,$[a]=(v-m)/864e5,$[u]=v/n,$[s]=v/e,$[i]=v/t,$)[y]||v,l?g:O.a(g)},m.daysInMonth=function(){return this.endOf(f).$D},m.$locale=function(){return D[this.$L]},m.locale=function(t,e){if(!t)return this.$L;var n=this.clone(),r=S(t,e,!0);return r&&(n.$L=r),n},m.clone=function(){return O.w(this.$d,this)},m.toDate=function(){return new Date(this.valueOf())},m.toJSON=function(){return this.isValid()?this.toISOString():null},m.toISOString=function(){return this.$d.toISOString()},m.toString=function(){return this.$d.toUTCString()},M}(),T=_.prototype;return w.prototype=T,[["$ms",r],["$s",i],["$m",s],["$H",u],["$W",a],["$M",f],["$y",c],["$D",d]].forEach((function(t){T[t[1]]=function(e){return this.$g(e,t[0],t[1])}})),w.extend=function(t,e){return t.$i||(t(e,_,w),t.$i=!0),w},w.locale=S,w.isDayjs=p,w.unix=function(t){return w(1e3*t)},w.en=D[g],w.Ls=D,w.p={},w}));
+
+/***/ }),
+
+/***/ 646:
+/***/ (function(module) {
+
+!function(t,s){ true?module.exports=s():0}(this,(function(){"use strict";var t,s,n=1e3,i=6e4,e=36e5,r=864e5,o=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,u=31536e6,h=2592e6,a=/^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/,d={years:u,months:h,days:r,hours:e,minutes:i,seconds:n,milliseconds:1,weeks:6048e5},c=function(t){return t instanceof p},f=function(t,s,n){return new p(t,n,s.$l)},m=function(t){return s.p(t)+"s"},l=function(t){return t<0},$=function(t){return l(t)?Math.ceil(t):Math.floor(t)},y=function(t){return Math.abs(t)},g=function(t,s){return t?l(t)?{negative:!0,format:""+y(t)+s}:{negative:!1,format:""+t+s}:{negative:!1,format:""}},p=function(){function l(t,s,n){var i=this;if(this.$d={},this.$l=n,void 0===t&&(this.$ms=0,this.parseFromMilliseconds()),s)return f(t*d[m(s)],this);if("number"==typeof t)return this.$ms=t,this.parseFromMilliseconds(),this;if("object"==typeof t)return Object.keys(t).forEach((function(s){i.$d[m(s)]=t[s]})),this.calMilliseconds(),this;if("string"==typeof t){var e=t.match(a);if(e){var r=e.slice(2).map((function(t){return null!=t?Number(t):0}));return this.$d.years=r[0],this.$d.months=r[1],this.$d.weeks=r[2],this.$d.days=r[3],this.$d.hours=r[4],this.$d.minutes=r[5],this.$d.seconds=r[6],this.calMilliseconds(),this}}return this}var y=l.prototype;return y.calMilliseconds=function(){var t=this;this.$ms=Object.keys(this.$d).reduce((function(s,n){return s+(t.$d[n]||0)*d[n]}),0)},y.parseFromMilliseconds=function(){var t=this.$ms;this.$d.years=$(t/u),t%=u,this.$d.months=$(t/h),t%=h,this.$d.days=$(t/r),t%=r,this.$d.hours=$(t/e),t%=e,this.$d.minutes=$(t/i),t%=i,this.$d.seconds=$(t/n),t%=n,this.$d.milliseconds=t},y.toISOString=function(){var t=g(this.$d.years,"Y"),s=g(this.$d.months,"M"),n=+this.$d.days||0;this.$d.weeks&&(n+=7*this.$d.weeks);var i=g(n,"D"),e=g(this.$d.hours,"H"),r=g(this.$d.minutes,"M"),o=this.$d.seconds||0;this.$d.milliseconds&&(o+=this.$d.milliseconds/1e3);var u=g(o,"S"),h=t.negative||s.negative||i.negative||e.negative||r.negative||u.negative,a=e.format||r.format||u.format?"T":"",d=(h?"-":"")+"P"+t.format+s.format+i.format+a+e.format+r.format+u.format;return"P"===d||"-P"===d?"P0D":d},y.toJSON=function(){return this.toISOString()},y.format=function(t){var n=t||"YYYY-MM-DDTHH:mm:ss",i={Y:this.$d.years,YY:s.s(this.$d.years,2,"0"),YYYY:s.s(this.$d.years,4,"0"),M:this.$d.months,MM:s.s(this.$d.months,2,"0"),D:this.$d.days,DD:s.s(this.$d.days,2,"0"),H:this.$d.hours,HH:s.s(this.$d.hours,2,"0"),m:this.$d.minutes,mm:s.s(this.$d.minutes,2,"0"),s:this.$d.seconds,ss:s.s(this.$d.seconds,2,"0"),SSS:s.s(this.$d.milliseconds,3,"0")};return n.replace(o,(function(t,s){return s||String(i[t])}))},y.as=function(t){return this.$ms/d[m(t)]},y.get=function(t){var s=this.$ms,n=m(t);return"milliseconds"===n?s%=1e3:s="weeks"===n?$(s/d[n]):this.$d[n],0===s?0:s},y.add=function(t,s,n){var i;return i=s?t*d[m(s)]:c(t)?t.$ms:f(t,this).$ms,f(this.$ms+i*(n?-1:1),this)},y.subtract=function(t,s){return this.add(t,s,!0)},y.locale=function(t){var s=this.clone();return s.$l=t,s},y.clone=function(){return f(this.$ms,this)},y.humanize=function(s){return t().add(this.$ms,"ms").locale(this.$l).fromNow(!s)},y.milliseconds=function(){return this.get("milliseconds")},y.asMilliseconds=function(){return this.as("milliseconds")},y.seconds=function(){return this.get("seconds")},y.asSeconds=function(){return this.as("seconds")},y.minutes=function(){return this.get("minutes")},y.asMinutes=function(){return this.as("minutes")},y.hours=function(){return this.get("hours")},y.asHours=function(){return this.as("hours")},y.days=function(){return this.get("days")},y.asDays=function(){return this.as("days")},y.weeks=function(){return this.get("weeks")},y.asWeeks=function(){return this.as("weeks")},y.months=function(){return this.get("months")},y.asMonths=function(){return this.as("months")},y.years=function(){return this.get("years")},y.asYears=function(){return this.as("years")},l}();return function(n,i,e){t=e,s=e().$utils(),e.duration=function(t,s){var n=e.locale();return f(t,{$l:n},s)},e.isDuration=c;var r=i.prototype.add,o=i.prototype.subtract;i.prototype.add=function(t,s){return c(t)&&(t=t.asMilliseconds()),r.bind(this)(t,s)},i.prototype.subtract=function(t,s){return c(t)&&(t=t.asMilliseconds()),o.bind(this)(t,s)}}}));
 
 /***/ }),
 
