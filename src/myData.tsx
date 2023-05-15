@@ -1,6 +1,4 @@
 import dayjs from "dayjs";
-import React from "react";
-import Icon from "./Com/Icon";
 
 // import "dayjs/locale/zh-cn";
 // dayjs.locale("zh-cn");
@@ -9,11 +7,16 @@ export interface TimeRange {
   start: number;
   end: number;
 }
+export interface IconProps {
+  code: string;
+  size: number;
+  color: string;
+}
 interface BaseInfo {
   name: string;
   photo: any;
   mobile: string;
-  hobby: JSX.Element[];
+  hobby: IconProps[];
   birthday: number;
   married: boolean;
   sex: string;
@@ -47,17 +50,17 @@ interface Porject {
 const mobile = "18948180248";
 export const baseInfo: BaseInfo = {
   name: "庄嘉敏",
-  photo: require("./imgs/avatar.jpg"),
+  photo: require("./assets/pictures/avatar.jpg"),
   mobile,
   birthday: +dayjs("1992/02/04"),
   married: false,
   sex: "男",
   hobby: [
-    <Icon code="icon-youxi" size={20} color="#515151" />,
-    <Icon code="icon-dianying" size={35} color="#515151" />,
-    <Icon code="icon-lanqiu1" size={30} color="#ea5555" />,
-    <Icon code="icon-zhuoqiu1" size={30} color="#515151" />,
-    <Icon code="icon-gangqinlaoshi-01" size={30} color="#fd6754" />,
+    { code: "icon-youxi", size: 20, color: "#515151" },
+    { code: "icon-dianying", size: 35, color: "#515151" },
+    { code: "icon-lanqiu1", size: 30, color: "#ea5555" },
+    { code: "icon-zhuoqiu1", size: 30, color: "#515151" },
+    { code: "icon-gangqinlaoshi-01", size: 30, color: "#fd6754" },
   ],
   email: "2047756046@qq.com",
   wechat: mobile,
@@ -77,7 +80,7 @@ export const baseInfo: BaseInfo = {
     "架构能力：擅长业务分析及公共抽象，主张贯彻代码结构分层以及OOP编程原则，周期性复查业务代码，力求代码简洁、功能分明、原子化，使代码更富有可维护性、灵活性、健壮性",
   ],
   technology: [
-    "掌握vue、react两大web前端框架及路由管理、状态管理等相关生态",
+    "掌握Vue、React两大web前端框架及相关生态,Vue+Vue-Router+Vuex,React+React-Router+Redux",
     "熟悉ES6+新特性，async/await、promise等异步编程",
     "熟悉Typescript及数据模型管理",
     "熟悉Git代码管理，Git-flow工作流",

@@ -2,8 +2,8 @@ import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import React, { Fragment, useEffect } from "react";
 import { TimeRange, baseInfo, companys, projects } from "../../myData";
-import DetailTitle from "../DetailTitle";
-import Icon from "../Icon";
+import DetailTitle from "../../Com/DetailTitle";
+import Icon from "../../Com/Icon";
 import styles from "./index.scss";
 
 dayjs.extend(duration);
@@ -63,7 +63,10 @@ const Resume = () => {
   return (
     <div className={styles.resume}>
       <div className={styles.header}>
-        <img className={styles.banner} src={require("../../imgs/banner.png")} />
+        <img
+          className={styles.banner}
+          src={require("../../assets/pictures/banner.png")}
+        />
         <div className={styles.title}>
           <div className={styles.cn}>
             {"个人简历".split("").map((each, index) => (
@@ -92,9 +95,9 @@ const Resume = () => {
             <div className={styles.hobbys_label}>
               <Icon code="icon-aihao" color="#da5353" size={24} />：
             </div>
-            {hobby.map((each, index) => (
+            {hobby.map(({ code, size, color }, index) => (
               <div className={styles.hobby} key={index}>
-                {each}
+                <Icon code={code} size={size} color={color} />
               </div>
             ))}
           </div>

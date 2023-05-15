@@ -1,8 +1,8 @@
 "use strict";
-(self["webpackChunkresume"] = self["webpackChunkresume"] || []).push([[514],{
+(globalThis["webpackChunkresume"] = globalThis["webpackChunkresume"] || []).push([[514],{
 
 /***/ 448:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 /**
  * @license React
@@ -332,7 +332,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!pl(c))throw Er
 /***/ }),
 
 /***/ 745:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 var __webpack_unused_export__;
 
@@ -347,7 +347,7 @@ if (true) {
 /***/ }),
 
 /***/ 935:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
@@ -381,7 +381,7 @@ if (true) {
 /***/ }),
 
 /***/ 408:
-/***/ (function(__unused_webpack_module, exports) {
+/***/ ((__unused_webpack_module, exports) => {
 
 /**
  * @license React
@@ -414,7 +414,7 @@ exports.useTransition=function(){return U.current.useTransition()};exports.versi
 /***/ }),
 
 /***/ 294:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 

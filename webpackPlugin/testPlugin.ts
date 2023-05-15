@@ -1,16 +1,19 @@
+import { Compiler } from "webpack";
+
 class TestPlugin {
-  constructor(options) {
+  options: any;
+  constructor(options: any) {
     this.options = options;
   }
-  apply(compiler) {
+  apply(compiler: Compiler) {
     // console.log(compiler);
     compiler.hooks.emit.tapAsync(TestPlugin.name, (compilation, next) => {
       const result = compilation.getAssets();
-      console.log(123, this.options, result);
+      // console.log(123, this.options, result);
       next();
     });
     // compiler.plugin("compilation", function (compilation) {});
   }
 }
-module.exports = TestPlugin;
-``
+// module.exports = TestPlugin;
+export default TestPlugin;

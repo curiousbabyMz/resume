@@ -1,5 +1,5 @@
 require("@babel/register");
-import hwp from "html-webpack-plugin";
+import HWP from "html-webpack-plugin";
 import path from "path";
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpeg|jpg|png)$/,
         include: /src/,
         use: {
           loader: "url-loader",
@@ -42,7 +42,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new hwp({
+    new HWP({
       template: path.resolve(__dirname, "../src/index.html"),
       favicon: "",
     }),

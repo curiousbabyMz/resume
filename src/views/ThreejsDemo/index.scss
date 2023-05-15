@@ -1,0 +1,19 @@
+@import "../../public.scss";
+.threejs_demo {
+  .temp_list {
+    display: flex;
+    margin: 10px 0;
+    .temp_item {
+      margin: 0 10px;
+      padding: 5px;
+      background-color: cornflowerblue;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}
+// .scene {
+//   width: 600px;
+//   height: 400px;
+//   border: 1px solid #645;
+// }

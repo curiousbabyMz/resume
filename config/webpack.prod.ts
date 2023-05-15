@@ -1,5 +1,6 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
+import CopyPlugin from "copy-webpack-plugin";
 import SpeedMeasurePlugin from "speed-measure-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
@@ -100,6 +101,14 @@ module.exports =
       new webpack.IgnorePlugin({
         resourceRegExp: /^\.\/locale$/,
         contextRegExp: /dayjs$/,
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, "../public"),
+            to: path.resolve(__dirname, "../dist/public"),
+          },
+        ],
       }),
     ],
   });
